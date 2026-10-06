@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AXIOMA — Presentación</title>
+<meta name="description" content="AXIOMA: un router universal de inteligencias artificiales, con criterio.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  html, body { margin:0; height:100%; background:#000; overflow:hidden; font-family:'Inter', Arial, sans-serif; }
+  #escena { position:absolute; left:50%; top:50%; width:1920px; height:1080px; transform-origin:0 0; }
+  #escena > section { position:absolute; inset:0; width:1920px; height:1080px; overflow:hidden; box-sizing:border-box; }
+  #escena > section:not(.activa) { display:none !important; }
+  #escena > section aside { display:none; }
+  #escena h1, #escena h2, #escena h3, #escena p { margin:0; }
+  #escena img, #escena video.fondo { display:block; }
+  #escena video.fondo { position:absolute; top:0; left:0; width:1920px; height:1080px; object-fit:cover; }
+  #notas { position:fixed; left:0; right:0; bottom:0; max-height:46vh; overflow:auto; background:#101013f2; color:#e9ede6;
+           padding:18px 28px; font-size:19px; line-height:1.5; white-space:pre-wrap; border-top:2px solid #8cc46f; display:none; z-index:10; }
+  #notas.visible { display:block; }
+  #hud { position:fixed; right:14px; bottom:12px; color:#ffffff99; font:500 13px 'JetBrains Mono', monospace; z-index:11; pointer-events:none; }
+  #notas.visible ~ #hud { bottom:calc(46vh + 12px); }
+  #ayuda { position:fixed; left:14px; top:12px; color:#ffffff77; font:500 13px 'JetBrains Mono', monospace; z-index:11; opacity:1; transition:opacity 1.2s 4s; pointer-events:none; }
+</style>
+</head>
+<body>
+<div id="escena">
+<section id="portada" data-transition="fade" style="background:#111111; color:#F3EFE7; font-family:'Inter', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:space-between; gap:28px">
+<img src="assets/foto-equipo.jpg" alt="Equipo de trabajo analiza información frente a un laptop" style="position:absolute; left:1100px; top:0; width:820px; height:1080px; object-fit:cover">
+<svg aria-label="Logo de AXIOMA: hexágono con una letra A naranja y tres nodos que representan inteligencias artificiales conectadas" width="560" height="560" viewBox="70 40 420 480" style="width:84px; height:96px; flex:none"><polygon points="280,52 478,166 478,394 280,508 82,394 82,166" fill="#F3EFE7"/><path d="M184 396 L280 166 L376 396" fill="none" stroke="#E0611A" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/><path d="M226 322 L334 322" stroke="#E0611A" stroke-width="30" stroke-linecap="round"/><circle cx="280" cy="166" r="30" fill="#141414" stroke="#F3EFE7" stroke-width="12"/><circle cx="184" cy="396" r="21" fill="#141414" stroke="#F3EFE7" stroke-width="10"/><circle cx="376" cy="396" r="21" fill="#141414" stroke="#F3EFE7" stroke-width="10"/></svg>
+<div style="width:900px; display:flex; flex-direction:column; gap:28px">
+<h1 style="font-family:'Inter Tight', Arial, sans-serif; font-size:200px; font-weight:700; letter-spacing:-8px; line-height:0.92; color:#F3EFE7">AXIOMA</h1>
+<p style="width:880px; font-family:'Inter Tight', Arial, sans-serif; font-size:48px; font-weight:500; letter-spacing:-1px; line-height:1.12; color:#F3EFE7">Un router universal de inteligencias artificiales, <span style="color:#E0611A">con criterio.</span></p>
+<p style="width:820px; font-size:28px; line-height:1.5; color:#A9A399">Une varias IA por API, por línea de comandos o instaladas en tu computador. Elige la mejor para cada tarea, revisa sus errores y crea con plantillas de alto nivel.</p>
+</div>
+<p style="width:880px; font-size:24px; color:#7A746A">Innovación tecnológica y sociedad</p>
+<p style="position:absolute; left:1124px; bottom:28px; width:400px; font-size:24px; color:#FFFFFF">Foto: Pexels</p>
+<aside>Buenos días. Les presentamos AXIOMA: un router universal de inteligencias artificiales, con criterio.
+Hoy existen muchas IA: unas escriben mejor, otras calculan mejor, otras crean imágenes. Algunas se usan por internet con una API, otras desde la línea de comandos, y otras se instalan en el computador. AXIOMA las une en un solo lugar.
+Para cada tarea elige la IA más adecuada, hace que otra IA revise el resultado antes de entregarlo, y trabaja con plantillas de alto nivel para no pensar todo desde cero.
+Nuestro logo lo resume: una A dentro de un hexágono, con tres puntos que son IA distintas conectadas que se revisan entre sí.</aside>
+</section>
+<section id="problema" data-transition="fade" style="background:#F3EFE7; color:#141414; font-family:'Inter', Arial, sans-serif; padding:112px 128px 160px; display:flex; flex-direction:column; justify-content:space-between; gap:28px">
+<img src="assets/foto-problema.jpg" alt="Joven frustrada se toma la cabeza frente a su laptop" style="position:absolute; left:1360px; top:0; width:560px; height:1080px; object-fit:cover">
+<h2 style="width:1120px; font-family:'Inter Tight', Arial, sans-serif; font-size:80px; font-weight:600; letter-spacing:-2px; line-height:1.02; color:#141414">Hay muchas IA, pero ninguna tiene criterio.</h2>
+<p style="width:1120px; font-size:28px; line-height:1.45; color:#3B3833">Estudiantes, docentes y pymes usan IA a diario. Reciben respuestas que suenan seguras pero pueden estar mal, y pierden tiempo saltando de una IA a otra y repitiendo el pedido.</p>
+<div style="width:1120px; display:grid; grid-template-columns:repeat(2, 1fr); gap:28px 48px">
+<div style="display:flex; flex-direction:column; gap:6px; border-top:2px solid #141414; padding:18px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#E0611A">01</p><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Inventa con seguridad</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">No avisa cuando se equivoca.</p></div>
+<div style="display:flex; flex-direction:column; gap:6px; border-top:2px solid #141414; padding:18px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#E0611A">02</p><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Cada IA por separado</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">Elegir y combinarlas a mano es difícil.</p></div>
+<div style="display:flex; flex-direction:column; gap:6px; border-top:2px solid #141414; padding:18px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#E0611A">03</p><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Parte de cero</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">Repiensa todo en cada pedido: lento y caro.</p></div>
+<div style="display:flex; flex-direction:column; gap:6px; border-top:2px solid #141414; padding:18px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#E0611A">04</p><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Resultado genérico</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">Sin estructura, todo sale parecido.</p></div>
+</div>
+<p style="width:1120px; font-size:28px; font-style:italic; line-height:1.4; color:#141414; border-left:6px solid #E0611A; padding:4px 0 4px 24px">Pides una presentación: una IA inventa un dato, otra olvida la estructura y necesitas cinco intentos.</p>
+<svg aria-label="Logo de AXIOMA" width="560" height="560" viewBox="70 40 420 480" style="position:absolute; left:128px; top:964px; width:42px; height:48px"><polygon points="280,52 478,166 478,394 280,508 82,394 82,166" fill="#141414"/><path d="M184 396 L280 166 L376 396" fill="none" stroke="#E0611A" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/><path d="M226 322 L334 322" stroke="#E0611A" stroke-width="30" stroke-linecap="round"/><circle cx="280" cy="166" r="30" fill="#F3EFE7" stroke="#141414" stroke-width="12"/><circle cx="184" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/><circle cx="376" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/></svg>
+<p style="position:absolute; left:186px; bottom:66px; width:500px; font-family:'Inter Tight', Arial, sans-serif; font-size:24px; font-weight:600; letter-spacing:6px; color:#141414">AXIOMA</p>
+<p style="position:absolute; left:1384px; bottom:28px; width:400px; font-size:24px; color:#FFFFFF">Foto: Pexels</p>
+<aside>Les pregunto: ¿cuántos han usado una IA para una tarea? Casi todos. ¿Y cuántas veces tuvieron que corregirla, o probar con otra IA?
+Ese es el problema: hay muchas IA, pero ninguna tiene criterio. Afecta a estudiantes, docentes y pymes que pierden tiempo revisando, saltando de una IA a otra y repitiendo el pedido.
+Vimos cuatro causas. Uno: la IA inventa datos con total seguridad y no avisa cuando se equivoca. Dos: cada IA funciona por separado, y elegir cuál usar o combinarlas a mano es difícil. Tres: parte de cero en cada pedido, y eso la hace lenta y cara. Cuatro: sin una estructura, los resultados salen genéricos.
+Un ejemplo que todos conocemos: pides una presentación, una IA inventa un dato, otra olvida la estructura, y terminas con cinco intentos.</aside>
+</section>
+<section id="solucion" data-transition="fade" style="background:#F3EFE7; color:#141414; font-family:'Inter', Arial, sans-serif; padding:112px 128px 160px; display:flex; flex-direction:column; justify-content:space-between; gap:28px">
+<h2 style="font-family:'Inter Tight', Arial, sans-serif; font-size:80px; font-weight:600; letter-spacing:-2px; line-height:1.02; color:#141414">A cada problema, una función.</h2>
+<div style="display:flex; flex-direction:column">
+<div style="display:flex; flex-direction:row; gap:32px; border-bottom:2px solid #141414; padding:0 0 14px 30px">
+<p style="width:520px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; color:#6E6A63">EL USUARIO DICE</p>
+<p style="flex:1; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; color:#6E6A63">AXIOMA RESPONDE</p>
+<p style="width:360px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; color:#6E6A63">EN PANTALLA</p>
+</div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; border-bottom:1px solid #D3CCBF; border-left:6px solid transparent; padding:22px 0 22px 24px"><p style="width:520px; font-size:30px; font-style:italic; color:#141414">«No sé qué IA usar»</p><p style="flex:1; font-size:30px; color:#141414">El <b>router</b> elige la mejor para cada tarea.</p><p style="width:360px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#E0611A">Texto → IA de texto</p></div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; border-bottom:1px solid #D3CCBF; border-left:6px solid #E0611A; padding:22px 0 22px 24px; background:#EBE5DA"><p style="width:520px; font-size:30px; font-style:italic; color:#141414">«Inventa datos»</p><p style="flex:1; font-size:30px; color:#141414"><b>Contraprueba:</b> otra IA lo revisa antes.</p><p style="width:360px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#E0611A">1 dato corregido</p></div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; border-bottom:1px solid #D3CCBF; border-left:6px solid transparent; padding:22px 0 22px 24px"><p style="width:520px; font-size:30px; font-style:italic; color:#141414">«Todo sale genérico»</p><p style="flex:1; font-size:30px; color:#141414"><b>Plantillas</b> de alto nivel, ya probadas.</p><p style="width:360px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#E0611A">Plantilla: informe</p></div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; border-bottom:1px solid #D3CCBF; border-left:6px solid transparent; padding:22px 0 22px 24px"><p style="width:520px; font-size:30px; font-style:italic; color:#141414">«Es lento y caro»</p><p style="flex:1; font-size:30px; color:#141414">Usa la IA más barata que sirva.</p><p style="width:360px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#E0611A">Máximo 3 IA</p></div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; border-bottom:1px solid #D3CCBF; border-left:6px solid transparent; padding:22px 0 22px 24px"><p style="width:520px; font-size:30px; font-style:italic; color:#141414">«Repite errores»</p><p style="flex:1; font-size:30px; color:#141414"><b>Memoria</b> de lo que ya aprobaste.</p><p style="width:360px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#E0611A">Caso aprobado</p></div>
+</div>
+<p style="font-size:24px; color:#6E6A63">Son hipótesis: las validaremos con estudiantes y docentes reales.</p>
+<svg aria-label="Logo de AXIOMA" width="560" height="560" viewBox="70 40 420 480" style="position:absolute; left:128px; top:964px; width:42px; height:48px"><polygon points="280,52 478,166 478,394 280,508 82,394 82,166" fill="#141414"/><path d="M184 396 L280 166 L376 396" fill="none" stroke="#E0611A" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/><path d="M226 322 L334 322" stroke="#E0611A" stroke-width="30" stroke-linecap="round"/><circle cx="280" cy="166" r="30" fill="#F3EFE7" stroke="#141414" stroke-width="12"/><circle cx="184" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/><circle cx="376" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/></svg>
+<p style="position:absolute; left:186px; bottom:66px; width:500px; font-family:'Inter Tight', Arial, sans-serif; font-size:24px; font-weight:600; letter-spacing:6px; color:#141414">AXIOMA</p>
+<aside>Nuestra solución responde directamente a esos problemas: cinco quejas típicas, cinco funciones.
+Si no sabes qué IA usar, el router de AXIOMA elige la mejor para cada tarea: una IA para escribir, otra para calcular, otra para crear imágenes.
+Si la IA inventa datos, entra la Contraprueba: otra IA distinta revisa el resultado y busca errores antes de entregarlo.
+Si todo sale genérico, AXIOMA usa plantillas de alto nivel: estructuras probadas para informes, presentaciones o código.
+Si es lento y caro, usa la IA más barata que sirva para esa tarea, con un máximo de tres por pedido. Y si repite errores, guarda en su memoria lo que ya aprobaste.
+Son hipótesis: el siguiente paso es validarlas con estudiantes y docentes reales.</aside>
+</section>
+<section id="funciona" data-transition="fade" style="background:#F3EFE7; color:#141414; font-family:'Inter', Arial, sans-serif; padding:112px 128px 160px; display:flex; flex-direction:column; justify-content:space-between; gap:28px">
+<h2 style="font-family:'Inter Tight', Arial, sans-serif; font-size:80px; font-weight:600; letter-spacing:-2px; line-height:1.02; color:#141414">Boceto: así funciona el router.</h2>
+<div style="display:flex; flex-direction:row; gap:28px; align-items:stretch">
+<div style="flex:1; display:flex; flex-direction:column; gap:10px; border-top:4px solid #141414; padding:22px 20px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:44px; font-weight:600; color:#E0611A">01</p><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Pedido</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">«Haz una presentación sobre el agua»</p></div>
+<div style="flex:1.15; display:flex; flex-direction:column; gap:10px; border-top:4px solid #E0611A; padding:22px 20px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:44px; font-weight:600; color:#E0611A">02</p><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Router</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">Elige la plantilla y las IA justas para la tarea.</p></div>
+<div style="flex:1.15; display:flex; flex-direction:column; gap:10px; border-top:4px solid #141414; padding:22px 20px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:44px; font-weight:600; color:#E0611A">03</p><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Conectores</h3><p style="font-size:26px; line-height:1.3; color:#3B3833"><b>API</b> · Claude, Gemini, GPT</p><p style="font-size:26px; line-height:1.3; color:#3B3833"><b>CLI</b> · terminal</p><p style="font-size:26px; line-height:1.3; color:#3B3833"><b>Local</b> · en tu PC</p></div>
+<div style="flex:1; display:flex; flex-direction:column; gap:10px; border-top:4px solid #141414; padding:22px 20px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:44px; font-weight:600; color:#E0611A">04</p><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Contraprueba</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">Otra IA busca errores y datos sin fuente.</p></div>
+<div style="flex:1; display:flex; flex-direction:column; gap:10px; border-top:4px solid #141414; padding:22px 20px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:44px; font-weight:600; color:#E0611A">05</p><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Aprobación</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">Una persona revisa y aprueba.</p></div>
+</div>
+<div style="display:flex; flex-direction:column; gap:20px; background:#141414; padding:36px 40px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; color:#A9A399">POR QUÉ LAS PLANTILLAS HACEN QUE LA IA PIENSE MENOS</p>
+<div style="display:flex; flex-direction:row; gap:48px">
+<div style="flex:1; display:flex; flex-direction:column; gap:6px"><p style="font-size:24px; color:#A9A399">Sin plantilla</p><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:500; line-height:1.2; color:#F3EFE7">Decide todo desde cero: orden, estilo y pasos.</p></div>
+<div style="flex:1; display:flex; flex-direction:column; gap:6px"><p style="font-size:24px; color:#A9A399">Con plantilla</p><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:500; line-height:1.2; color:#F3EFE7">La estructura ya está probada; solo completa lo nuevo.</p></div>
+<div style="flex:1; display:flex; flex-direction:column; gap:6px"><p style="font-size:24px; color:#A9A399">Resultado</p><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; line-height:1.2; color:#E0611A">Más rápido, más barato y con menos errores.</p></div>
+</div>
+</div>
+<svg aria-label="Logo de AXIOMA" width="560" height="560" viewBox="70 40 420 480" style="position:absolute; left:128px; top:964px; width:42px; height:48px"><polygon points="280,52 478,166 478,394 280,508 82,394 82,166" fill="#141414"/><path d="M184 396 L280 166 L376 396" fill="none" stroke="#E0611A" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/><path d="M226 322 L334 322" stroke="#E0611A" stroke-width="30" stroke-linecap="round"/><circle cx="280" cy="166" r="30" fill="#F3EFE7" stroke="#141414" stroke-width="12"/><circle cx="184" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/><circle cx="376" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/></svg>
+<p style="position:absolute; left:186px; bottom:66px; width:500px; font-family:'Inter Tight', Arial, sans-serif; font-size:24px; font-weight:600; letter-spacing:6px; color:#141414">AXIOMA</p>
+<aside>Este es el boceto de AXIOMA: así funciona el router, paso a paso.
+Uno: llega un pedido, por ejemplo «haz una presentación sobre el agua».
+Dos: el router decide cómo hacerlo. Busca en su biblioteca la plantilla adecuada, en este caso «presentación escolar», y elige qué IA conviene para cada parte.
+Tres: los conectores. AXIOMA puede usar IA en la nube por API, como Claude, Gemini o GPT; herramientas de línea de comandos; o modelos instalados en el propio computador.
+Cuatro: la Contraprueba. Una IA distinta revisa el resultado y busca errores o datos sin fuente.
+Cinco: una persona revisa y aprueba.
+Abajo está la clave de las plantillas: sin plantilla, la IA decide todo desde cero cada vez. Con plantilla, la estructura ya está probada y solo completa lo nuevo. Por eso piensa menos, gasta menos y se equivoca menos.</aside>
+</section>
+<section id="dispositivo" data-transition="fade" style="background:#F3EFE7; color:#141414; font-family:'Inter', Arial, sans-serif; padding:112px 128px 160px; display:flex; flex-direction:column; justify-content:space-between; gap:28px">
+<h2 style="font-family:'Inter Tight', Arial, sans-serif; font-size:80px; font-weight:600; letter-spacing:-2px; line-height:1.02; color:#141414">Modelo 3D: AXIOMA Dona.</h2>
+<div style="display:flex; flex-direction:row; gap:40px; align-items:stretch">
+<img src="assets/dona-render.jpg" alt="Render 3D del dispositivo AXIOMA Dona: aro negro mate de 12 caras con anillo de luz naranja, dos botones y rejilla de parlante" style="width:1100px; height:680px; object-fit:cover">
+<div style="flex:1; display:flex; flex-direction:column; gap:18px">
+<img src="assets/dona-superior.jpg" alt="Vista superior: anillo de luz, micrófonos, botones y hueco central" style="width:524px; height:220px; object-fit:cover">
+<div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between; border-top:2px solid #141414; padding:14px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:56px; font-weight:600; letter-spacing:-1.5px; color:#141414">13 cm</p><p style="font-size:24px; color:#6E6A63">ancho</p></div>
+<div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between; border-top:2px solid #141414; padding:14px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:56px; font-weight:600; letter-spacing:-1.5px; color:#141414">4 cm</p><p style="font-size:24px; color:#6E6A63">alto</p></div>
+<div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #E0611A; padding:14px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">También es control remoto</p><p style="font-size:26px; line-height:1.35; color:#3B3833">Maneja la TV, el aire acondicionado y las luces por infrarrojo y Wi-Fi.</p><p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#E0611A">«Apaga la tele» · «Sube el aire»</p></div>
+</div>
+</div>
+<svg aria-label="Logo de AXIOMA" width="560" height="560" viewBox="70 40 420 480" style="position:absolute; left:128px; top:964px; width:42px; height:48px"><polygon points="280,52 478,166 478,394 280,508 82,394 82,166" fill="#141414"/><path d="M184 396 L280 166 L376 396" fill="none" stroke="#E0611A" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/><path d="M226 322 L334 322" stroke="#E0611A" stroke-width="30" stroke-linecap="round"/><circle cx="280" cy="166" r="30" fill="#F3EFE7" stroke="#141414" stroke-width="12"/><circle cx="184" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/><circle cx="376" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/></svg>
+<p style="position:absolute; left:186px; bottom:66px; width:500px; font-family:'Inter Tight', Arial, sans-serif; font-size:24px; font-weight:600; letter-spacing:6px; color:#141414">AXIOMA</p>
+<aside>Este es el modelo 3D del dispositivo físico: AXIOMA Dona. Es como un parlante inteligente tipo Alexa, pero conectado a nuestro router de inteligencias artificiales.
+Tiene forma de dona, pero con líneas rectas: doce caras planas y bordes biselados. Mide 13 centímetros de ancho y solo 4 de alto, con un hueco central de 5 centímetros para ventilación y para tomarlo con la mano.
+Arriba tiene un anillo de luz que muestra si está escuchando, pensando o respondiendo; cuatro micrófonos para escuchar desde cualquier lado; y dos botones: uno para silenciar el micrófono y otro de acción. Alrededor tiene un parlante de 360 grados, y abajo el puerto USB-C y una base de goma antideslizante.
+Y además funciona como control remoto: tiene un emisor infrarrojo y Wi-Fi, así que puede manejar la televisión, el aire acondicionado o las luces. Basta con decirle «apaga la tele» o «sube el aire».
+Se conecta por Wi-Fi al router AXIOMA: le hablas, y el router elige la IA que mejor sirve para responder.</aside>
+</section>
+<section id="video" data-transition="fade" style="background:#111111; color:#F3EFE7; font-family:'Inter', Arial, sans-serif; padding:112px 128px 160px; display:flex; flex-direction:column; justify-content:space-between; gap:28px">
+<h2 style="font-family:'Inter Tight', Arial, sans-serif; font-size:80px; font-weight:600; letter-spacing:-2px; line-height:1.02; color:#F3EFE7">Por dentro del prototipo.</h2>
+<div style="display:flex; flex-direction:row; gap:44px; align-items:stretch">
+<img src="assets/prototipo-poster.jpg" data-video="assets/prototipo.mp4" alt="Video del prototipo AXIOMA: el dispositivo se desarma y muestra la tapa con anillo de luz, la placa, los parlantes y la base" style="width:1220px; height:686px; object-fit:cover">
+<div style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:14px">
+<div style="display:flex; flex-direction:row; gap:18px; align-items:baseline; border-top:1px solid #34312C; padding:14px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:26px; font-weight:600; color:#E0611A">1</p><div style="flex:1; display:flex; flex-direction:column; gap:2px"><p style="font-size:26px; font-weight:600; color:#F3EFE7">Tapa</p><p style="font-size:24px; color:#A9A399">anillo de luz</p></div></div>
+<div style="display:flex; flex-direction:row; gap:18px; align-items:baseline; border-top:1px solid #34312C; padding:14px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:26px; font-weight:600; color:#E0611A">2</p><div style="flex:1; display:flex; flex-direction:column; gap:2px"><p style="font-size:26px; font-weight:600; color:#F3EFE7">Micrófonos</p><p style="font-size:24px; color:#A9A399">escuchan en 360°</p></div></div>
+<div style="display:flex; flex-direction:row; gap:18px; align-items:baseline; border-top:1px solid #34312C; padding:14px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:26px; font-weight:600; color:#E0611A">3</p><div style="flex:1; display:flex; flex-direction:column; gap:2px"><p style="font-size:26px; font-weight:600; color:#F3EFE7">Rejilla</p><p style="font-size:24px; color:#A9A399">del parlante</p></div></div>
+<div style="display:flex; flex-direction:row; gap:18px; align-items:baseline; border-top:1px solid #34312C; padding:14px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:26px; font-weight:600; color:#E0611A">4</p><div style="flex:1; display:flex; flex-direction:column; gap:2px"><p style="font-size:26px; font-weight:600; color:#F3EFE7">Parlantes</p><p style="font-size:24px; color:#A9A399">uno por lado</p></div></div>
+<div style="display:flex; flex-direction:row; gap:18px; align-items:baseline; border-top:1px solid #34312C; padding:14px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:26px; font-weight:600; color:#E0611A">5</p><div style="flex:1; display:flex; flex-direction:column; gap:2px"><p style="font-size:26px; font-weight:600; color:#F3EFE7">Placa</p><p style="font-size:24px; color:#A9A399">conexión y control</p></div></div>
+<div style="display:flex; flex-direction:row; gap:18px; align-items:baseline; border-top:1px solid #34312C; padding:14px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:26px; font-weight:600; color:#E0611A">6</p><div style="flex:1; display:flex; flex-direction:column; gap:2px"><p style="font-size:26px; font-weight:600; color:#F3EFE7">Base</p><p style="font-size:24px; color:#A9A399">carga USB-C</p></div></div>
+</div>
+</div>
+<svg aria-label="Logo de AXIOMA" width="560" height="560" viewBox="70 40 420 480" style="position:absolute; left:128px; top:964px; width:42px; height:48px"><polygon points="280,52 478,166 478,394 280,508 82,394 82,166" fill="#F3EFE7"/><path d="M184 396 L280 166 L376 396" fill="none" stroke="#E0611A" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/><path d="M226 322 L334 322" stroke="#E0611A" stroke-width="30" stroke-linecap="round"/><circle cx="280" cy="166" r="30" fill="#141414" stroke="#F3EFE7" stroke-width="12"/><circle cx="184" cy="396" r="21" fill="#141414" stroke="#F3EFE7" stroke-width="10"/><circle cx="376" cy="396" r="21" fill="#141414" stroke="#F3EFE7" stroke-width="10"/></svg>
+<p style="position:absolute; left:186px; bottom:66px; width:500px; font-family:'Inter Tight', Arial, sans-serif; font-size:24px; font-weight:600; letter-spacing:6px; color:#F3EFE7">AXIOMA</p>
+<aside>Este es nuestro prototipo en video. Primero ven el dispositivo armado, y luego se desarma para mostrar cada pieza por dentro.
+Uno: la tapa, con el anillo de luz que indica si está escuchando, pensando o respondiendo. Dos: los micrófonos, que escuchan desde cualquier lado. Tres: la rejilla del parlante. Cuatro: los parlantes, uno por cada lado, para que el sonido salga en 360 grados. Cinco: la placa, que conecta todo y se comunica por Wi-Fi con el router AXIOMA. Y seis: la base, con la carga por USB-C.
+Así se ve cómo el router de inteligencias artificiales pasa de ser un programa a un objeto que cualquiera puede tener en su escritorio.</aside>
+</section>
+<section id="uso" data-transition="fade" style="background:#F3EFE7; color:#141414; font-family:'Inter', Arial, sans-serif; padding:112px 128px 160px; display:flex; flex-direction:row; gap:0">
+<img src="assets/foto-estudiantes.jpg" alt="Dos estudiantes trabajan juntos con un laptop y apuntes" style="position:absolute; left:0; top:0; width:600px; height:1080px; object-fit:cover">
+<div style="width:540px; flex:none"></div>
+<div style="width:600px; flex:none; display:flex; flex-direction:column; justify-content:center; gap:26px">
+<h2 style="font-family:'Inter Tight', Arial, sans-serif; font-size:68px; font-weight:600; letter-spacing:-2px; line-height:1.02; color:#141414">La app: así se usa AXIOMA.</h2>
+<div style="display:flex; flex-direction:row; gap:18px; align-items:baseline; border-top:2px solid #141414; padding:16px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#E0611A">01</p><div style="flex:1; display:flex; flex-direction:column; gap:4px"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:30px; font-weight:600; color:#141414">Plantilla e IA</p><p style="font-size:26px; line-height:1.35; color:#3B3833">Muestra qué plantilla y qué IA eligió.</p></div></div>
+<div style="display:flex; flex-direction:row; gap:18px; align-items:baseline; border-top:2px solid #141414; padding:16px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#E0611A">02</p><div style="flex:1; display:flex; flex-direction:column; gap:4px"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:30px; font-weight:600; color:#141414">Contraprueba</p><p style="font-size:26px; line-height:1.35; color:#3B3833">Avisa qué error encontró y lo corrige.</p></div></div>
+<div style="display:flex; flex-direction:row; gap:18px; align-items:baseline; border-top:2px solid #141414; padding:16px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#E0611A">03</p><div style="flex:1; display:flex; flex-direction:column; gap:4px"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:30px; font-weight:600; color:#141414">Tú decides</p><p style="font-size:26px; line-height:1.35; color:#3B3833">Nada se crea sin tu aprobación.</p></div></div>
+<p style="font-size:24px; color:#6E6A63">Maqueta de la app con un ejemplo simulado.</p>
+</div>
+<div style="position:absolute; left:1316px; top:64px; width:476px; height:888px; display:flex; flex-direction:column; gap:12px; background:#121212; border:10px solid #141414; border-radius:48px; padding:30px 26px">
+<div style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; border-bottom:1px solid #2E2E2E; padding:0 0 12px"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:26px; font-weight:600; letter-spacing:4px; color:#F3EFE7">AXIOMA</p><p style="font-size:24px; color:#8E8E8E">Nuevo pedido</p></div>
+<p style="align-self:end; width:340px; font-size:24px; line-height:1.3; color:#FFFFFF; background:#2A2A2A; padding:12px 16px; border-radius:16px 16px 4px 16px">Crea una presentación de 6 diapositivas sobre el agua.</p>
+<div style="display:flex; flex-direction:column; gap:4px; border-top:1px solid #2E2E2E; padding:10px 0 0"><p style="font-size:24px; color:#8E8E8E">Plantilla</p><p style="font-size:24px; font-weight:600; color:#E0611A">Presentación escolar</p><p style="font-size:24px; color:#8E8E8E">IA elegidas</p><p style="font-size:24px; font-weight:600; color:#FFFFFF">Texto · Datos · Imágenes</p></div>
+<div style="display:flex; flex-direction:column; gap:6px; border-left:3px solid #E0611A; padding:4px 0 4px 16px"><p style="font-size:24px; line-height:1.3; color:#FFFFFF">1. El agua en la Tierra</p><p style="font-size:24px; line-height:1.3; color:#FFFFFF">2. El ciclo del agua</p><p style="font-size:24px; line-height:1.3; color:#FFFFFF">3. Cómo cuidarla…</p></div>
+<p style="font-size:24px; line-height:1.3; color:#FFD3B0; border-top:1px solid #2E2E2E; padding:10px 0 0">Contraprueba: 1 dato sin fuente corregido</p>
+<p style="font-size:24px; line-height:1.3; color:#BDBDBD">Memoria: usé tu estilo aprobado</p>
+<div style="flex:1"></div>
+<p style="font-family:'Inter Tight', Arial, sans-serif; font-size:26px; font-weight:600; color:#FFFFFF; background:#E0611A; padding:16px; border-radius:12px; text-align:center">Aprobar y crear</p>
+</div>
+<p style="position:absolute; left:24px; bottom:28px; width:400px; font-size:24px; color:#FFFFFF">Foto: Pexels</p>
+<aside>Así se usa AXIOMA en la pantalla. Es una maqueta con un ejemplo simulado.
+Un estudiante escribe: «crea una presentación de seis diapositivas sobre el agua».
+AXIOMA muestra qué plantilla eligió, «presentación escolar», y qué IA va a usar: una para el texto, otra para los datos y otra para las imágenes.
+Propone el índice de la presentación. Debajo aparece la Contraprueba: otra IA encontró un dato sin fuente y lo corrigió. Y la memoria recuerda el estilo que el estudiante ya aprobó antes.
+Al final, el botón aprobar: nada se crea hasta que la persona lo decide.</aside>
+</section>
+<section id="fundamento" data-transition="fade" style="background:#F3EFE7; color:#141414; font-family:'Inter', Arial, sans-serif; padding:112px 128px 160px; display:flex; flex-direction:column; justify-content:space-between; gap:28px">
+<h2 style="font-family:'Inter Tight', Arial, sans-serif; font-size:80px; font-weight:600; letter-spacing:-2px; line-height:1.02; color:#141414">En qué se basa: seis estudios.</h2>
+<div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:44px 48px">
+<div style="display:flex; flex-direction:column; gap:10px; border-top:2px solid #141414; padding:18px 0 0"><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Combinar modelos</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">Elegir el modelo justo puede igualar al mejor con mucho menos costo.</p><p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#E0611A">Chen et al., 2023 → router</p></div>
+<div style="display:flex; flex-direction:column; gap:10px; border-top:2px solid #141414; padding:18px 0 0"><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Alucinaciones</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">Los modelos inventan datos con total seguridad.</p><p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#E0611A">Ji et al., 2023 → problema</p></div>
+<div style="display:flex; flex-direction:column; gap:10px; border-top:2px solid #141414; padding:18px 0 0"><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Debate entre IA</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">Varias IA que se critican aciertan más.</p><p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#E0611A">Du et al., 2023 → Contraprueba</p></div>
+<div style="display:flex; flex-direction:column; gap:10px; border-top:2px solid #141414; padding:18px 0 0"><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Autocorrección</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">Revisar y corregir antes de entregar mejora la respuesta.</p><p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#E0611A">Madaan et al., 2023 → revisión</p></div>
+<div style="display:flex; flex-direction:column; gap:10px; border-top:2px solid #141414; padding:18px 0 0"><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Listas y plantillas</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">Un procedimiento probado evita errores sin pensarlo todo otra vez.</p><p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#E0611A">Gawande, 2009 → plantillas</p></div>
+<div style="display:flex; flex-direction:column; gap:10px; border-top:2px solid #141414; padding:18px 0 0"><h3 style="font-family:'Inter Tight', Arial, sans-serif; font-size:32px; font-weight:600; letter-spacing:-0.5px; color:#141414">Respuestas con fuentes</h3><p style="font-size:26px; line-height:1.35; color:#3B3833">Buscar documentos antes de responder reduce lo inventado.</p><p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#E0611A">Lewis et al., 2020 → fuentes</p></div>
+</div>
+<p style="font-size:24px; line-height:1.4; color:#6E6A63">Chen, Zaharia y Zou (2023), FrugalGPT · Ji et al. (2023), ACM Computing Surveys · Du et al. (2023), Multiagent Debate · Madaan et al. (2023), Self-Refine · Gawande (2009), The Checklist Manifesto · Lewis et al. (2020), NeurIPS.</p>
+<svg aria-label="Logo de AXIOMA" width="560" height="560" viewBox="70 40 420 480" style="position:absolute; left:128px; top:964px; width:42px; height:48px"><polygon points="280,52 478,166 478,394 280,508 82,394 82,166" fill="#141414"/><path d="M184 396 L280 166 L376 396" fill="none" stroke="#E0611A" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/><path d="M226 322 L334 322" stroke="#E0611A" stroke-width="30" stroke-linecap="round"/><circle cx="280" cy="166" r="30" fill="#F3EFE7" stroke="#141414" stroke-width="12"/><circle cx="184" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/><circle cx="376" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/></svg>
+<p style="position:absolute; left:186px; bottom:66px; width:500px; font-family:'Inter Tight', Arial, sans-serif; font-size:24px; font-weight:600; letter-spacing:6px; color:#141414">AXIOMA</p>
+<aside>AXIOMA no es una idea inventada desde cero: cada parte se apoya en un estudio.
+Primero, el router: un estudio de la Universidad de Stanford llamado FrugalGPT mostró que elegir el modelo justo para cada pregunta puede igualar al mejor modelo con mucho menos costo.
+Segundo, el problema: un estudio de 2023 sobre alucinaciones confirma que los modelos inventan datos con total seguridad.
+Tercero y cuarto, la Contraprueba: cuando varias IA debaten y se critican, aciertan más; y cuando una IA revisa y corrige su respuesta antes de entregarla, la respuesta mejora.
+Quinto, las plantillas: el cirujano Atul Gawande mostró que las listas de verificación evitan errores en hospitales y aviones. Nuestras plantillas son eso para la IA.
+Y sexto: buscar en documentos antes de responder reduce lo inventado. Las fuentes completas están abajo.</aside>
+</section>
+<section id="viabilidad" data-transition="fade" style="background:#F3EFE7; color:#141414; font-family:'Inter', Arial, sans-serif; padding:112px 128px 160px; display:flex; flex-direction:column; justify-content:space-between; gap:28px">
+<h2 style="font-family:'Inter Tight', Arial, sans-serif; font-size:80px; font-weight:600; letter-spacing:-2px; line-height:1.02; color:#141414">Se puede hacer hoy, con bajo costo.</h2>
+<div style="display:flex; flex-direction:row; gap:64px">
+<div style="flex:1; display:flex; flex-direction:column">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; color:#6E6A63; border-bottom:2px solid #141414; padding:0 0 10px">QUÉ NECESITAMOS</p>
+<div style="display:flex; flex-direction:row; justify-content:space-between; align-items:baseline; border-bottom:1px solid #D3CCBF; padding:12px 0"><p style="font-size:28px; color:#141414">IA por API (plan gratuito)</p><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:30px; font-weight:600; color:#E0611A">$0</p></div>
+<div style="display:flex; flex-direction:row; justify-content:space-between; align-items:baseline; border-bottom:1px solid #D3CCBF; padding:12px 0"><p style="font-size:28px; color:#141414">IA local y herramientas CLI</p><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:30px; font-weight:600; color:#E0611A">$0</p></div>
+<div style="display:flex; flex-direction:row; justify-content:space-between; align-items:baseline; border-bottom:1px solid #D3CCBF; padding:12px 0"><p style="font-size:28px; color:#141414">Página web (plan gratuito)</p><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:30px; font-weight:600; color:#E0611A">$0</p></div>
+<div style="display:flex; flex-direction:row; justify-content:space-between; align-items:baseline; border-bottom:1px solid #D3CCBF; padding:12px 0"><p style="font-size:28px; color:#141414">Plantillas y pruebas</p><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:30px; font-weight:600; color:#E0611A">8 semanas</p></div>
+</div>
+<div style="flex:1; display:grid; grid-template-columns:repeat(2, 1fr); gap:22px 36px">
+<div style="display:flex; flex-direction:column; gap:4px; border-top:2px solid #141414; padding:12px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#141414">Económico</p><p style="font-size:24px; line-height:1.3; color:#3B3833">Menos intentos y la IA más barata que sirva.</p></div>
+<div style="display:flex; flex-direction:column; gap:4px; border-top:2px solid #141414; padding:12px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#141414">Ambiental</p><p style="font-size:24px; line-height:1.3; color:#3B3833">Pensar menos gasta menos energía.</p></div>
+<div style="display:flex; flex-direction:column; gap:4px; border-top:2px solid #141414; padding:12px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#141414">Social</p><p style="font-size:24px; line-height:1.3; color:#3B3833">IA confiable para estudiantes y pymes.</p></div>
+<div style="display:flex; flex-direction:column; gap:4px; border-top:2px solid #141414; padding:12px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#141414">Ética</p><p style="font-size:24px; line-height:1.3; color:#3B3833">Una persona decide; datos privados.</p></div>
+</div>
+</div>
+<div style="display:flex; flex-direction:row; gap:24px">
+<div style="flex:1; display:flex; flex-direction:column; gap:6px; border-top:6px solid #E0611A; padding:14px 16px 0 0"><p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#6E6A63">ETAPA 1 · HOY</p><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#141414">3 IA + plantillas</p></div>
+<div style="flex:1; display:flex; flex-direction:column; gap:6px; border-top:2px solid #141414; padding:14px 16px 0 0"><p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#6E6A63">ETAPA 2</p><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#141414">Memoria</p></div>
+<div style="flex:1; display:flex; flex-direction:column; gap:6px; border-top:2px solid #141414; padding:14px 16px 0 0"><p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#6E6A63">ETAPA 3</p><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#141414">Más conectores</p></div>
+<div style="flex:1; display:flex; flex-direction:column; gap:6px; border-top:2px solid #141414; padding:14px 16px 0 0"><p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#6E6A63">ETAPA 4</p><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:28px; font-weight:600; color:#141414">Pymes y empresas</p></div>
+</div>
+<p style="font-size:26px; color:#3B3833">Aporta a los ODS <b>4</b> Educación de calidad · <b>9</b> Industria e innovación · <b>12</b> Consumo responsable.</p>
+<svg aria-label="Logo de AXIOMA" width="560" height="560" viewBox="70 40 420 480" style="position:absolute; left:128px; top:964px; width:42px; height:48px"><polygon points="280,52 478,166 478,394 280,508 82,394 82,166" fill="#141414"/><path d="M184 396 L280 166 L376 396" fill="none" stroke="#E0611A" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/><path d="M226 322 L334 322" stroke="#E0611A" stroke-width="30" stroke-linecap="round"/><circle cx="280" cy="166" r="30" fill="#F3EFE7" stroke="#141414" stroke-width="12"/><circle cx="184" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/><circle cx="376" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/></svg>
+<p style="position:absolute; left:186px; bottom:66px; width:500px; font-family:'Inter Tight', Arial, sans-serif; font-size:24px; font-weight:600; letter-spacing:6px; color:#141414">AXIOMA</p>
+<aside>¿Se puede hacer de verdad? Sí, y con bajo costo.
+Para el prototipo usamos IA por API en sus planes gratuitos, herramientas de línea de comandos e IA locales que son gratis, y una página web en un plan gratuito. Lo que más cuesta es nuestro tiempo: unas ocho semanas para crear las plantillas y probarlas.
+El plan tiene cuatro etapas: hoy, un router con tres IA y plantillas escolares; después, la memoria; luego, más conectores; y al final, llevarlo a pymes y empresas.
+¿Y el impacto? Económico: menos intentos y siempre la IA más barata que sirva. Ambiental: si la IA piensa menos, gasta menos energía. Social: una IA confiable para estudiantes y pymes. Y ético: una persona siempre decide, y los datos son privados.
+Así aportamos a los ODS 4, educación de calidad; 9, industria e innovación; y 12, consumo responsable.</aside>
+</section>
+<section id="conclusion" data-transition="fade" style="background:#E0611A; color:#141414; font-family:'Inter', Arial, sans-serif; padding:112px 128px 160px; display:flex; flex-direction:column; justify-content:space-between; gap:28px">
+<h2 style="width:1500px; font-family:'Inter Tight', Arial, sans-serif; font-size:84px; font-weight:600; letter-spacing:-2px; line-height:1.02; color:#141414">AXIOMA une las IA, elige la mejor y revisa sus errores.</h2>
+<div style="display:flex; flex-direction:column; gap:18px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; color:#141414">¿POR QUÉ VALE LA PENA?</p>
+<div style="display:flex; flex-direction:row; gap:48px">
+<div style="flex:1; display:flex; flex-direction:column; gap:8px; border-top:3px solid #141414; padding:16px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:34px; font-weight:600; letter-spacing:-0.5px; color:#141414">Confianza</p><p style="font-size:26px; line-height:1.35; color:#141414">Antes de entregar, otra IA busca el error.</p></div>
+<div style="flex:1; display:flex; flex-direction:column; gap:8px; border-top:3px solid #141414; padding:16px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:34px; font-weight:600; letter-spacing:-0.5px; color:#141414">Ahorro</p><p style="font-size:26px; line-height:1.35; color:#141414">Menos intentos, menos gasto y menos energía.</p></div>
+<div style="flex:1; display:flex; flex-direction:column; gap:8px; border-top:3px solid #141414; padding:16px 0 0"><p style="font-family:'Inter Tight', Arial, sans-serif; font-size:34px; font-weight:600; letter-spacing:-0.5px; color:#141414">Para todos</p><p style="font-size:26px; line-height:1.35; color:#141414">Lo mejor de cada IA, gratis para empezar.</p></div>
+</div>
+</div>
+<p style="font-size:28px; line-height:1.4; color:#141414"><b>Próximo paso:</b> probarlo con nuestro curso y medir tiempo, intentos y errores con y sin AXIOMA.</p>
+<p style="font-family:'Inter Tight', Arial, sans-serif; font-size:56px; font-weight:600; letter-spacing:-1.5px; color:#141414">«Que la IA piense mejor, no más.»</p>
+<svg aria-label="Logo de AXIOMA" width="560" height="560" viewBox="70 40 420 480" style="position:absolute; left:128px; top:964px; width:42px; height:48px"><polygon points="280,52 478,166 478,394 280,508 82,394 82,166" fill="#141414"/><path d="M184 396 L280 166 L376 396" fill="none" stroke="#E0611A" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/><path d="M226 322 L334 322" stroke="#E0611A" stroke-width="30" stroke-linecap="round"/><circle cx="280" cy="166" r="30" fill="#F3EFE7" stroke="#141414" stroke-width="12"/><circle cx="184" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/><circle cx="376" cy="396" r="21" fill="#F3EFE7" stroke="#141414" stroke-width="10"/></svg>
+<p style="position:absolute; left:186px; bottom:66px; width:500px; font-family:'Inter Tight', Arial, sans-serif; font-size:24px; font-weight:600; letter-spacing:6px; color:#141414">AXIOMA</p>
+<aside>Para cerrar: AXIOMA une las inteligencias artificiales, elige la mejor para cada tarea y revisa sus propios errores. En pocas palabras: una IA con criterio.
+¿Por qué vale la pena? Por tres razones. Confianza: antes de entregarte algo, otra IA busca el error. Ahorro: con plantillas y la IA justa hay menos intentos, menos gasto y menos energía. Y es para todos: junta lo mejor de cada IA y se puede empezar gratis.
+Hoy tenemos el diseño, el modelo 3D y una maqueta; todavía falta desarrollarlo y validarlo. Nuestro próximo paso es probarlo con nuestro propio curso y medir el tiempo, los intentos y los errores, con y sin AXIOMA.
+Nuestra meta cabe en una frase: que la IA piense mejor, no más. Muchas gracias. ¿Tienen alguna pregunta?</aside>
+</section>
+</div>
+<div id="notas"></div>
+<div id="hud"></div>
+<div id="ayuda">← → cambiar · N notas · F pantalla completa</div>
+<script>
+(function () {
+  var ICONOS = {
+    Activity:  '<path d="M3 12h4l3-8 4 16 3-8h4" />',
+    Lightning: '<path d="M13 2 4 14h7l-1 8 9-12h-7z" />',
+    Lock:      '<rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" />',
+    Chat:      '<path d="M4 5h16v11H9l-5 4z" />'
+  };
+  function svg(inner, w, h, color, extra) {
+    var s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    s.setAttribute('viewBox', extra || '0 0 24 24');
+    s.setAttribute('fill', 'none'); s.setAttribute('stroke', color); s.setAttribute('stroke-width', '1.8');
+    s.setAttribute('stroke-linecap', 'round'); s.setAttribute('stroke-linejoin', 'round');
+    s.style.width = w; s.style.height = h; s.style.flex = 'none'; s.innerHTML = inner;
+    return s;
+  }
+  // <x-icon> y <x-shape> son elementos propios del editor de diapositivas: aquí se dibujan como SVG.
+  document.querySelectorAll('x-icon').forEach(function (e) {
+    var c = getComputedStyle(e).color;
+    e.replaceWith(svg(ICONOS[e.getAttribute('name')] || ICONOS.Activity, e.style.width, e.style.height, c));
+  });
+  document.querySelectorAll('x-shape').forEach(function (e) {
+    var bg = e.style.background || '#8cc46f';
+    var s = svg('<path d="M2 12h17M13 5l7 7-7 7" />', e.style.width, e.style.height, bg);
+    e.replaceWith(s);
+  });
+  // Fondo animado: <img data-video="..."> pasa a ser un <video> en bucle (la imagen queda de póster).
+  document.querySelectorAll('img[data-video]').forEach(function (img) {
+    var v = document.createElement('video');
+    v.className = 'fondo'; v.src = img.getAttribute('data-video'); v.poster = img.getAttribute('src');
+    v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'auto';
+    v.setAttribute('style', img.getAttribute('style'));
+    img.replaceWith(v);
+  });
+
+  // Capas: el fondo (video/imagen/degradado de 1920x1080) va atrás; todo lo demás, encima.
+  document.querySelectorAll('#escena > section > *').forEach(function (e) {
+    if (e.tagName === 'ASIDE') return;
+    var st = e.style, esFondo = st.position === 'absolute' && st.width === '1920px' && st.height === '1080px';
+    if (!st.position) st.position = 'relative';
+    st.zIndex = esFondo ? '0' : '1';
+  });
+
+  var slides = Array.prototype.slice.call(document.querySelectorAll('#escena > section'));
+  var notas = document.getElementById('notas'), hud = document.getElementById('hud'), escena = document.getElementById('escena');
+  var actual = 0;
+
+  function escalar() {
+    var k = Math.min(innerWidth / 1920, innerHeight / 1080);
+    escena.style.transform = 'scale(' + k + ')';
+    escena.style.marginLeft = (-960 * k) + 'px'; escena.style.marginTop = (-540 * k) + 'px';
+    escena.style.left = '50%'; escena.style.top = '50%';
+  }
+  function mostrar(i) {
+    actual = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (s, n) {
+      var on = n === actual;
+      s.classList.toggle('activa', on);
+      s.querySelectorAll('video.fondo').forEach(function (v) { if (on) { v.currentTime = 0; v.play().catch(function () {}); } else { v.pause(); } });
+    });
+    var a = slides[actual].querySelector('aside');
+    notas.textContent = a ? a.textContent.trim() : '';
+    hud.textContent = (actual + 1) + ' / ' + slides.length;
+    history.replaceState(null, '', '#' + (actual + 1));
+  }
+  addEventListener('resize', escalar);
+  addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'Enter') { mostrar(actual + 1); e.preventDefault(); }
+    else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'Backspace') { mostrar(actual - 1); e.preventDefault(); }
+    else if (k === 'Home') mostrar(0);
+    else if (k === 'End') mostrar(slides.length - 1);
+    else if (k === 'n' || k === 'N') notas.classList.toggle('visible');
+    else if (k === 'f' || k === 'F') { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen(); }
+  });
+  addEventListener('click', function (e) { if (!notas.contains(e.target)) mostrar(actual + (e.clientX < innerWidth / 3 ? -1 : 1)); });
+  escalar();
+  mostrar((parseInt(location.hash.slice(1), 10) || 1) - 1);
+})();
+</script>
+</body>
+</html>

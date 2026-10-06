@@ -1,0 +1,51 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-06T17:30:00Z"
+  },
+  "lists": "css",
+  "title": "AXIOMA — Presentación",
+  "cover": "portada",
+  "order": [
+    "portada",
+    "problema",
+    "solucion",
+    "funciona",
+    "dispositivo",
+    "video",
+    "uso",
+    "fundamento",
+    "viabilidad",
+    "conclusion"
+  ],
+  "sections": {
+    "s1": {
+      "description": "Qué es AXIOMA, el problema y sus causas",
+      "start": "portada"
+    },
+    "s2": {
+      "description": "La solución, el router, el dispositivo y el prototipo",
+      "start": "solucion"
+    },
+    "s3": {
+      "description": "Fundamentos, factibilidad, impacto y conclusión",
+      "start": "fundamento"
+    }
+  },
+  "faces": {
+    "inter-tight": {
+      "family": "Inter Tight",
+      "href": "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap"
+    },
+    "inter": {
+      "family": "Inter",
+      "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    },
+    "ibm-plex-mono": {
+      "family": "IBM Plex Mono",
+      "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap"
+    }
+  },
+  "designSystems": []
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITULO}}</title>
+<meta name="description" content="AXIOMA: un router universal de inteligencias artificiales, con criterio.">
+{{FUENTES}}<style>
+  html, body { margin:0; height:100%; background:#000; overflow:hidden; font-family:'Inter', Arial, sans-serif; }
+  #escena { position:absolute; left:50%; top:50%; width:1920px; height:1080px; transform-origin:0 0; }
+  #escena > section { position:absolute; inset:0; width:1920px; height:1080px; overflow:hidden; box-sizing:border-box; }
+  #escena > section:not(.activa) { display:none !important; }
+  #escena > section aside { display:none; }
+  #escena h1, #escena h2, #escena h3, #escena p { margin:0; }
+  #escena img, #escena video.fondo { display:block; }
+  #escena video.fondo { position:absolute; top:0; left:0; width:1920px; height:1080px; object-fit:cover; }
+  #notas { position:fixed; left:0; right:0; bottom:0; max-height:46vh; overflow:auto; background:#101013f2; color:#e9ede6;
+           padding:18px 28px; font-size:19px; line-height:1.5; white-space:pre-wrap; border-top:2px solid #8cc46f; display:none; z-index:10; }
+  #notas.visible { display:block; }
+  #hud { position:fixed; right:14px; bottom:12px; color:#ffffff99; font:500 13px 'JetBrains Mono', monospace; z-index:11; pointer-events:none; }
+  #notas.visible ~ #hud { bottom:calc(46vh + 12px); }
+  #ayuda { position:fixed; left:14px; top:12px; color:#ffffff77; font:500 13px 'JetBrains Mono', monospace; z-index:11; opacity:1; transition:opacity 1.2s 4s; pointer-events:none; }
+</style>
+</head>
+<body>
+<div id="escena">
+{{SLIDES}}
+</div>
+<div id="notas"></div>
+<div id="hud"></div>
+<div id="ayuda">← → cambiar · N notas · F pantalla completa</div>
+<script>
+(function () {
+  var ICONOS = {
+    Activity:  '<path d="M3 12h4l3-8 4 16 3-8h4" />',
+    Lightning: '<path d="M13 2 4 14h7l-1 8 9-12h-7z" />',
+    Lock:      '<rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" />',
+    Chat:      '<path d="M4 5h16v11H9l-5 4z" />'
+  };
+  function svg(inner, w, h, color, extra) {
+    var s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    s.setAttribute('viewBox', extra || '0 0 24 24');
+    s.setAttribute('fill', 'none'); s.setAttribute('stroke', color); s.setAttribute('stroke-width', '1.8');
+    s.setAttribute('stroke-linecap', 'round'); s.setAttribute('stroke-linejoin', 'round');
+    s.style.width = w; s.style.height = h; s.style.flex = 'none'; s.innerHTML = inner;
+    return s;
+  }
+  // <x-icon> y <x-shape> son elementos propios del editor de diapositivas: aquí se dibujan como SVG.
+  document.querySelectorAll('x-icon').forEach(function (e) {
+    var c = getComputedStyle(e).color;
+    e.replaceWith(svg(ICONOS[e.getAttribute('name')] || ICONOS.Activity, e.style.width, e.style.height, c));
+  });
+  document.querySelectorAll('x-shape').forEach(function (e) {
+    var bg = e.style.background || '#8cc46f';
+    var s = svg('<path d="M2 12h17M13 5l7 7-7 7" />', e.style.width, e.style.height, bg);
+    e.replaceWith(s);
+  });
+  // Fondo animado: <img data-video="..."> pasa a ser un <video> en bucle (la imagen queda de póster).
+  document.querySelectorAll('img[data-video]').forEach(function (img) {
+    var v = document.createElement('video');
+    v.className = 'fondo'; v.src = img.getAttribute('data-video'); v.poster = img.getAttribute('src');
+    v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'auto';
+    v.setAttribute('style', img.getAttribute('style'));
+    img.replaceWith(v);
+  });
+
+  // Capas: el fondo (video/imagen/degradado de 1920x1080) va atrás; todo lo demás, encima.
+  document.querySelectorAll('#escena > section > *').forEach(function (e) {
+    if (e.tagName === 'ASIDE') return;
+    var st = e.style, esFondo = st.position === 'absolute' && st.width === '1920px' && st.height === '1080px';
+    if (!st.position) st.position = 'relative';
+    st.zIndex = esFondo ? '0' : '1';
+  });
+
+  var slides = Array.prototype.slice.call(document.querySelectorAll('#escena > section'));
+  var notas = document.getElementById('notas'), hud = document.getElementById('hud'), escena = document.getElementById('escena');
+  var actual = 0;
+
+  function escalar() {
+    var k = Math.min(innerWidth / 1920, innerHeight / 1080);
+    escena.style.transform = 'scale(' + k + ')';
+    escena.style.marginLeft = (-960 * k) + 'px'; escena.style.marginTop = (-540 * k) + 'px';
+    escena.style.left = '50%'; escena.style.top = '50%';
+  }
+  function mostrar(i) {
+    actual = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (s, n) {
+      var on = n === actual;
+      s.classList.toggle('activa', on);
+      s.querySelectorAll('video.fondo').forEach(function (v) { if (on) { v.currentTime = 0; v.play().catch(function () {}); } else { v.pause(); } });
+    });
+    var a = slides[actual].querySelector('aside');
+    notas.textContent = a ? a.textContent.trim() : '';
+    hud.textContent = (actual + 1) + ' / ' + slides.length;
+    history.replaceState(null, '', '#' + (actual + 1));
+  }
+  addEventListener('resize', escalar);
+  addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'Enter') { mostrar(actual + 1); e.preventDefault(); }
+    else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'Backspace') { mostrar(actual - 1); e.preventDefault(); }
+    else if (k === 'Home') mostrar(0);
+    else if (k === 'End') mostrar(slides.length - 1);
+    else if (k === 'n' || k === 'N') notas.classList.toggle('visible');
+    else if (k === 'f' || k === 'F') { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen(); }
+  });
+  addEventListener('click', function (e) { if (!notas.contains(e.target)) mostrar(actual + (e.clientX < innerWidth / 3 ? -1 : 1)); });
+  escalar();
+  mostrar((parseInt(location.hash.slice(1), 10) || 1) - 1);
+})();
+</script>
+</body>
+</html>
